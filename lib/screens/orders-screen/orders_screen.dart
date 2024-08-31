@@ -1,9 +1,5 @@
 import 'package:asbeza/core/components/index.dart';
-import 'package:asbeza/core/config/theme-config/color_pallete.dart';
-import 'package:asbeza/core/constants/assets.dart';
-import 'package:asbeza/core/data/models/product-model/product_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 

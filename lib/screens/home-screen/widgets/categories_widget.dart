@@ -96,32 +96,6 @@ class CategoriesWidget extends ConsumerWidget {
   }
 }
 
-class _CategoriesHeaderDelegate extends SliverPersistentHeaderDelegate {
-  final Widget child;
-
-  _CategoriesHeaderDelegate({required this.child});
-
-  @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    final hasOverlapped = shrinkOffset > 0.0;
-    return Container(
-        color: hasOverlapped ? Colors.black.withOpacity(.9) : null,
-        child: child);
-  }
-
-  @override
-  double get maxExtent => 106;
-
-  @override
-  double get minExtent => 106;
-
-  @override
-  bool shouldRebuild(_CategoriesHeaderDelegate oldDelegate) {
-    return oldDelegate.child != child;
-  }
-}
-
 class _CategoryWidget extends ConsumerWidget {
   final VoidCallback onPressed;
   final CategoriesModel category;
@@ -188,3 +162,36 @@ class _CategoryCollapsedWidget extends ConsumerWidget {
     );
   }
 }
+
+
+
+/**
+ * 
+ 
+class _CategoriesHeaderDelegate extends SliverPersistentHeaderDelegate {
+  final Widget child;
+
+  _CategoriesHeaderDelegate({required this.child});
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    final hasOverlapped = shrinkOffset > 0.0;
+    return Container(
+        color: hasOverlapped ? Colors.black.withOpacity(.9) : null,
+        child: child);
+  }
+
+  @override
+  double get maxExtent => 106;
+
+  @override
+  double get minExtent => 106;
+
+  @override
+  bool shouldRebuild(_CategoriesHeaderDelegate oldDelegate) {
+    return oldDelegate.child != child;
+  }
+}
+
+ */
