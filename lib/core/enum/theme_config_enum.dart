@@ -1,0 +1,1 @@
+enum ThemeConfigEnum { fruitTheme, vegtableTheme }
