@@ -6,7 +6,7 @@ import '../models/product-model/product_model.dart';
 
 part 'product_list_data.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 List<ProductModel> productDataList(ProductDataListRef _) => [
       const ProductModel(
         id: '1',
@@ -120,6 +120,28 @@ List<ProductModel> productDataList(ProductDataListRef _) => [
       ),
       const ProductModel(
         id: '11',
+        category: Category.fruit,
+        imagePath: Assets.assetsImagesCategoriesOrangeCategory,
+        title: 'Orange',
+        price: 10.0,
+        address: 'Addis Ababa',
+        weight: 0.5,
+        description:
+            'Plump and juicy grapes, perfect for a quick snack or adding to your favorite recipes. Carefully selected from local vineyards to ensure top-notch sweetness and quality.',
+      ),
+      const ProductModel(
+        id: '12',
+        category: Category.fruit,
+        imagePath: Assets.assetsImagesProductImagesFruitsGraps,
+        title: 'Grapes',
+        price: 40.0,
+        address: 'Addis Ababa',
+        weight: 0.5,
+        description:
+            'Plump and juicy grapes, perfect for a quick snack or adding to your favorite recipes. Carefully selected from local vineyards to ensure top-notch sweetness and quality.',
+      ),
+      const ProductModel(
+        id: '13',
         category: Category.fruit,
         imagePath: Assets.assetsImagesProductImagesFruitsGraps,
         title: 'Grapes',

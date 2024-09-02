@@ -4,7 +4,7 @@ import 'package:asbeza/core/data/models/category-model/category_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'category_list_data.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 List<CategoriesModel> categoryListData(CategoryListDataRef _) => [
       CategoriesModel(
           iconPath: Assets.assetsImagesCategoriesOrangeCategory,
