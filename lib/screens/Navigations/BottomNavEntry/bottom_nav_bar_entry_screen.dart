@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'bottom_nav_bar.dart';
@@ -16,9 +17,9 @@ class EntryScreen extends StatefulHookConsumerWidget {
 class _EntryScreenState extends ConsumerState<EntryScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Stack(
+    return Stack(
       children: [
-        AppBackground(hideEllipse: false, child: BottomNavScreens()),
+        const AppBackground(hideEllipse: false, child: BottomNavScreens()),
         Positioned(
           bottom: 30.h,
           left: 40.w,

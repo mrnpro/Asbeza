@@ -1,4 +1,6 @@
+import 'package:asbeza/core/config/theme-config/theme_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 import '../../../core/components/index.dart';
@@ -72,7 +74,7 @@ class OrderItem extends StatelessWidget {
 
   SizedBox buildimg() {
     return SizedBox(
-        height: 100,
+        height: 100.h,
         child: Image.asset(Assets.assetsImagesProductImagesFruitsMango));
   }
 }
