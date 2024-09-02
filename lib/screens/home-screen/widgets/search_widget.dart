@@ -67,23 +67,22 @@ class SearchWidget extends HookConsumerWidget {
                       ],
                     ),
                   ),
-                  _buildCategories(
-                    isCategoriesPressed,
-                  )
+                  _buildCategories(isCategoriesPressed, size)
                 ],
               ),
             ),
           ),
-          AnimateVisibility(isVisible: isCategoryHidden, child: _buildWand()),
+          _buildWand(),
         ],
       ),
     );
   }
 
-  _buildCategories(ValueNotifier<bool> isCategoriesPressed) {
-    return Expanded(
-      child: AnimateVisibility(
-        isVisible: !isCategoryHidden,
+  _buildCategories(ValueNotifier<bool> isCategoriesPressed, Size size) {
+    return AnimateVisibility(
+      isVisible: !isCategoryHidden,
+      child: SizedBox(
+        width: size.width / 3,
         child: InkWell(
           splashColor: Colors.transparent,
           highlightColor: Colors.transparent,
@@ -98,15 +97,18 @@ class SearchWidget extends HookConsumerWidget {
     );
   }
 
-  Expanded _buildWand() {
+  _buildWand() {
     return Expanded(
-      flex: 1,
-      child: AppContainer(
-        onPressed: () {},
-        padding: const EdgeInsets.all(20),
-        margin: const EdgeInsets.only(top: 16, right: 16, bottom: 16),
-        height: 75,
-        child: Expanded(child: SvgPicture.asset(Assets.assetsIconsWandIcon)),
+      flex: 0,
+      child: AnimateVisibility(
+        isVisible: isCategoryHidden,
+        child: AppContainer(
+          onPressed: () {},
+          padding: const EdgeInsets.all(20),
+          margin: const EdgeInsets.only(top: 16, right: 16, bottom: 16),
+          height: 75,
+          child: SvgPicture.asset(Assets.assetsIconsWandIcon),
+        ),
       ),
     );
   }
