@@ -20,10 +20,10 @@ class _EntryScreenState extends ConsumerState<EntryScreen> {
       children: [
         AppBackground(hideEllipse: false, child: BottomNavScreens()),
         Positioned(
-          bottom: 30,
-          left: 40,
-          right: 40,
-          child: BottomNavBar(),
+          bottom: 30.h,
+          left: 40.w,
+          right: 40.w,
+          child: const BottomNavBar(),
         )
       ],
     );

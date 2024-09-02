@@ -46,7 +46,7 @@ class _OrdersScreenState extends ConsumerState<OrdersScreen> {
         Positioned(
           right: 0,
           left: 0,
-          bottom: 150,
+          bottom: 150.h,
           child: BuyNowBtn(
             onPressed: () {},
           ),

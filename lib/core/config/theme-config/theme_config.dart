@@ -1,4 +1,6 @@
+import 'package:asbeza/app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'theme_config.g.dart';
@@ -8,20 +10,20 @@ ThemeData darkTheme = ThemeData.dark();
 final TextTheme commonTextTheme = TextTheme(
   displayLarge: GoogleFonts.jost(
     color: Colors.white,
-    fontSize: 28.0,
+    fontSize: 28.0.sp,
     fontWeight: FontWeight.bold,
   ),
   bodyLarge: GoogleFonts.jost(
     color: Colors.white,
-    fontSize: 16.0,
+    fontSize: 16.0.sp,
   ),
   bodyMedium: GoogleFonts.jost(
       color: const Color(0xFFB3B3B3),
-      fontSize: 14.0,
+      fontSize: 14.0.sp,
       fontWeight: FontWeight.w500),
   labelLarge: GoogleFonts.jost(
     color: Colors.white,
-    fontSize: 18.0,
+    fontSize: 18.0.sp,
     fontWeight: FontWeight.w600,
   ),
 );

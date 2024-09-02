@@ -113,14 +113,14 @@ class _CategoryWidget extends ConsumerWidget {
       onPressed: onPressed,
       margin: EdgeInsets.zero,
       padding: const EdgeInsets.all(9),
-      width: 91,
-      height: 106,
+      width: 91.w,
+      height: 106.w,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
             category.iconPath,
-            height: 66,
+            height: 66.h,
           ),
           Text(
             category.title,
@@ -154,8 +154,8 @@ class _CategoryCollapsedWidget extends ConsumerWidget {
       onPressed: onPressed,
       margin: EdgeInsets.zero,
       padding: const EdgeInsets.all(9),
-      width: 50,
-      height: 50,
+      width: 50.w,
+      height: 50.w,
       child: Image.asset(
         category.iconPath,
       ),

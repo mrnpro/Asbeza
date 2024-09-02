@@ -1,6 +1,7 @@
 import 'package:asbeza/screens/Navigations/BottomNavEntry/BottomNavElements/bottom_nav_elements.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../core/components/index.dart';
@@ -15,8 +16,8 @@ class BottomNavBar extends ConsumerWidget {
     final bottomNavElements = ref.watch(bottomNavElementsNotifierProvider);
     final primaryColor = Theme.of(context).primaryColor;
     return GlassmorphicContainer(
-      height: 70,
-      width: 400,
+      height: 70.h,
+      width: 400.w,
       blur: 50,
       color: const Color(0xFF6F6F6F),
       alignment: Alignment.bottomCenter,
