@@ -17,32 +17,30 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Expanded(
-      child: AppBackground(
-        ellipseTrackingWidgetKey: productImgKey,
-        child: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                const DetailsAppBar(),
-                ProductImage(widget: widget, productImgKey: productImgKey),
-                const ProductQuanity(),
-                ProductTitlePriceAddress(
-                  product: widget.product,
+    return AppBackground(
+      ellipseTrackingWidgetKey: productImgKey,
+      child: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const DetailsAppBar(),
+              ProductImage(widget: widget, productImgKey: productImgKey),
+              const ProductQuanity(),
+              ProductTitlePriceAddress(
+                product: widget.product,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 26.0),
+                child: Text(
+                  "Discover the freshest, crispest cabbage available! Perfect for salads, stir-fries, and homemade coleslaw, our cabbage is sourced from local farms, ensuring top quality and taste. Packed with nutrients and bursting with flavor, this versatile vegetable is a must-have in your kitchen. Order now for a delicious and healthy addition to your meals!",
+                  style: theme.textTheme.bodyLarge
+                      ?.copyWith(color: theme.primaryColor.withOpacity(.5)),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 26.0),
-                  child: Text(
-                    "Discover the freshest, crispest cabbage available! Perfect for salads, stir-fries, and homemade coleslaw, our cabbage is sourced from local farms, ensuring top quality and taste. Packed with nutrients and bursting with flavor, this versatile vegetable is a must-have in your kitchen. Order now for a delicious and healthy addition to your meals!",
-                    style: theme.textTheme.bodyLarge
-                        ?.copyWith(color: theme.primaryColor.withOpacity(.5)),
-                  ),
-                ),
-                BuyNowBtn(
-                  onPressed: () {},
-                )
-              ],
-            ),
+              ),
+              BuyNowBtn(
+                onPressed: () {},
+              )
+            ],
           ),
         ),
       ),

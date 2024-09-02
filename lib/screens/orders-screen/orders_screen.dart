@@ -1,5 +1,7 @@
 import 'package:asbeza/core/components/index.dart';
+import 'package:asbeza/core/config/theme-config/theme_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -19,8 +21,7 @@ class _OrdersScreenState extends ConsumerState<OrdersScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     final theme = Theme.of(context);
-    return Expanded(
-        child: Stack(
+    return Stack(
       children: [
         AppBackground(
           child: SafeArea(
@@ -52,6 +53,6 @@ class _OrdersScreenState extends ConsumerState<OrdersScreen> {
           ),
         )
       ],
-    ));
+    );
   }
 }
