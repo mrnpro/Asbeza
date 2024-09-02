@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/components/index.dart';
 import '../../../core/constants/index.dart';
+import '../../screens.dart';
 import 'index.dart';
 
 class SearchWidget extends HookConsumerWidget {
@@ -102,13 +103,21 @@ class SearchWidget extends HookConsumerWidget {
       flex: 0,
       child: AnimateVisibility(
         isVisible: isCategoryHidden,
-        child: AppContainer(
-          onPressed: () {},
-          padding: const EdgeInsets.all(20),
-          margin: const EdgeInsets.only(top: 16, right: 16, bottom: 16),
-          height: 75,
-          child: SvgPicture.asset(Assets.assetsIconsWandIcon),
-        ),
+        child: Consumer(builder: (context, ref, _) {
+          final isEclipseHidden = ref.watch(togleEclipseProvider);
+          return AppContainer(
+            onPressed: () {
+              ref.read(togleEclipseProvider.notifier).state = !isEclipseHidden;
+            },
+            padding: const EdgeInsets.all(20),
+            margin: const EdgeInsets.only(top: 16, right: 16, bottom: 16),
+            height: 75,
+            child: SvgPicture.asset(
+              Assets.assetsIconsWandIcon,
+              color: isEclipseHidden ? null : theme.primaryColor,
+            ),
+          );
+        }),
       ),
     );
   }

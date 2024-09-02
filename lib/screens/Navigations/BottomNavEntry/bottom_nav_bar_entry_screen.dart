@@ -7,6 +7,10 @@ import 'bottom_nav_bar.dart';
 import '../../../core/components/index.dart';
 import 'bottom_nav_screens.dart';
 
+final togleEclipseProvider = StateProvider<bool>((ref) {
+  return false;
+});
+
 class EntryScreen extends StatefulHookConsumerWidget {
   const EntryScreen({super.key});
 
@@ -17,9 +21,11 @@ class EntryScreen extends StatefulHookConsumerWidget {
 class _EntryScreenState extends ConsumerState<EntryScreen> {
   @override
   Widget build(BuildContext context) {
+    final hideEclipse = ref.watch(togleEclipseProvider);
     return Stack(
       children: [
-        const AppBackground(hideEllipse: false, child: BottomNavScreens()),
+        AppBackground(
+            hideEllipse: hideEclipse, child: const BottomNavScreens()),
         Positioned(
           bottom: 30.h,
           left: 40.w,
