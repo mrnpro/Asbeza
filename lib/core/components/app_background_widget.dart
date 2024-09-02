@@ -1,5 +1,7 @@
+import 'package:asbeza/core/config/theme-config/theme_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'glass_container_widget.dart';
@@ -18,8 +20,8 @@ class AppBackground extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final ellipseOffset = useState(const Offset(0, -450.0));
-    final ellipseSize = useState(500.0);
+    final ellipseOffset = useState(Offset(0, -450.0.h));
+    final ellipseSize = useState(500.0.r);
 
     useEffect(() {
       if (ellipseTrackingWidgetKey == null) {
@@ -93,7 +95,7 @@ class AppBackground extends HookConsumerWidget {
         child: CircleAvatar(
           backgroundColor: theme.primaryColor
               .withOpacity(ellipseTrackingWidgetKey == null ? 0.8 : 0.2),
-          radius: 500,
+          radius: 500.r,
         ),
       ),
     );
