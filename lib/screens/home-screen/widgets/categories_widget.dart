@@ -1,7 +1,9 @@
 import 'package:asbeza/core/components/index.dart';
+import 'package:asbeza/core/config/theme-config/theme_config.dart';
 import 'package:asbeza/core/data/category_list_data/category_list_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/data/models/category-model/category_model.dart';
 import '../../../providers/selected-category/slected_category_provider.dart';
@@ -54,9 +56,7 @@ class CategoriesWidget extends ConsumerWidget {
           return _CategoryWidget(
             isSelected: isSelected,
             onPressed: () {
-              ref
-                  .read(selectedCategoryProvider.notifier)
-                  .selectCategory(category);
+              _selectCategory(category: category, ref: ref);
             },
             category: category,
           );
