@@ -8,16 +8,17 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../widgets/index.dart';
 
 class FruitLayout extends HookConsumerWidget {
-  final ScrollController controller;
-
-  const FruitLayout({super.key, required this.controller});
+  const FruitLayout({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context, ref) {
     final productsList = ref.watch(productDataListProvider);
     return CustomScrollView(
-      physics: const NeverScrollableScrollPhysics(),
-      controller: controller,
+      key: const PageStorageKey<String>('grid_fruit_key'),
+      physics: const BouncingScrollPhysics(),
+      primary: true,
       slivers: [
         const BannerWidget(
           bannerPath: Assets.assetsImagesBannersFruitsBanner,
